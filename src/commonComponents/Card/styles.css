@@ -1,0 +1,28 @@
+.skill-card {
+    padding: 60px 20px 20px 20px;
+    background-color: rgb(30, 48, 80);
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    flex: 1 1 calc(33.33% - 40px);
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  
+.skill-card .skill-card-icon {
+    background-color: #ec8f5e;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+  }
+  
+.skill-card .skill-card-icon svg {
+    font-size: 80px;
+    position: absolute;
+    left: -25%;
+    top: -25%;
+    transform: translate(-25%, -25%);
+    transition: all 0.3s ease-in;
+  }
