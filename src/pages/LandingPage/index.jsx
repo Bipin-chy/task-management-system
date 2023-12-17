@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Nav, Navbar, Row } from "react-bootstrap";
+
+// axios imports
+import axios from "axios";
 
 import "./styles.css";
 
@@ -9,13 +12,32 @@ import Card from "../../commonComponents/Card";
 import featureCardDatas from "../../datas/featureCardDatas";
 
 const LandingPage = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:8888/task-management-system/server/api/register.php"
+        );
+        setData(response.data);
+      } catch (error) {
+        console.error("Error fetching datassss:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log("hello", { data });
+
   return (
     <React.Fragment>
       <Navbar sticky="top" expand="lg" className="navbar-conatiner">
         <Container>
           <Navbar.Brand href="#home">
             <img
-              src="/logo.jpg"
+              src="/logo.svg"
               width="40"
               height="40"
               className="d-inline-block align-top"

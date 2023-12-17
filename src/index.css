@@ -2,6 +2,7 @@
 
 :root {
   --primary-color: #213555;
+  --secondary-color: #0f2167;
   --text-color: #607274;
   --white: #ffffff;
   --black: #000000;
@@ -61,12 +62,12 @@ p {
 }
 
 a {
-  color: #007bff;
+  color: var(--secondary-color) !important;
   text-decoration: none;
 }
 
 a:hover {
-  color: #0056b3;
+  color: var(--primary-color);
 }
 
 .btn,
