@@ -6,6 +6,7 @@ import "./styles.css";
 // assets imports
 import headerBanner from "../../assets/images/landing-banner.png";
 import Card from "../../commonComponents/Card";
+import featureCardDatas from "../../datas/featureCardDatas";
 
 const LandingPage = () => {
   return (
@@ -25,15 +26,12 @@ const LandingPage = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#features">Features</Nav.Link>
-              <Nav.Link href="#pricing">Pricing</Nav.Link>
             </Nav>
             <Nav>
               <Nav.Link href="/login" className="me-4">
                 Login
               </Nav.Link>
-              {/* <Nav.Link href="/register"> */}
               <Button className="btn-primary">Get Started</Button>
-              {/* </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -69,12 +67,20 @@ const LandingPage = () => {
         </Container>
       </section>
 
-      <section id="features">
+      <section id="features" className="mt-5">
         <Container>
-          <Row>
-            <Col>
-              <Card />
-            </Col>
+          <h1 className="text-center text-uppercase mb-5">Features</h1>
+          <Row className="mt-5">
+            {featureCardDatas.map((item, index) => (
+              <Col xs={12} sm={6} md={4}>
+                <Card
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  index={index}
+                />
+              </Col>
+            ))}
           </Row>
         </Container>
       </section>
